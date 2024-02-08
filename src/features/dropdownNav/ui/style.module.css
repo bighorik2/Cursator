@@ -1,0 +1,126 @@
+.wrapper {
+  position: relative;
+  height: max-content;
+  will-change: contents;
+}
+
+
+.trigger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 164px;
+
+  border-radius: 70px;
+  border: 1px solid rgb(0, 117, 255);
+  height: 52px;
+  transition: 0.2s;
+  gap: 8px;
+  user-select: none;
+  cursor: pointer;
+}
+
+.trigger>img {
+  transition: 0.2s;
+  transform: rotate(180deg);
+}
+
+.wrapper.isOpen>.trigger>img {
+  transform: rotate(0deg);
+}
+
+.dropdown {
+  position: absolute;
+  top: 76px;
+  left: 0;
+
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0s linear 0.3s;
+}
+
+.wrapper.isOpen>.dropdown {
+  transition-delay: 0s;
+  opacity: 1;
+  visibility: visible;
+
+}
+
+.dropdownWrapper {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  z-index: 2;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+  user-select: none;
+  padding: 16px 24px;
+  width: 280px;
+  box-sizing: border-box;
+  border: 1px solid rgb(220, 220, 220);
+  border-radius: 14px;
+  box-shadow: 0px 0px 21px 0px rgba(0, 0, 0, 0.06);
+  background: rgb(255, 255, 255);
+  transition: 0.1s 0.25s;
+  visibility: visible;
+}
+
+.list>div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+  cursor: pointer;
+}
+
+.list>div.selected {
+  color: rgb(0, 117, 255);
+  transition: 0.3s;
+}
+
+.list>div>img {
+  transition: 0.3s;
+  opacity: 0;
+}
+
+.list>div.selected>img {
+  opacity: 1;
+}
+
+
+
+
+
+.subList {
+  display: flex;
+  flex-direction: column;
+  padding: 16px 28px;
+  width: max-content;
+  gap: 12px;
+  position: relative;
+  left: -280px;
+  z-index: -1;
+  transition: 0.3s 0.1s;
+
+  background: rgb(255, 255, 255);
+  border: 1px solid rgb(220, 220, 220);
+  border-left: 0px;
+  border-radius: 14px;
+}
+
+.subList.isOpen {
+  border-radius: 0 14px 14px 0;
+  box-shadow: 0px 0px 21px 0px rgba(0, 0, 0, 0.06);
+  left: 0;
+}
+
+.subList.isOpen+.list {}
+
+.list:has(~.subList.isOpen) {
+  border-radius: 14px 0 0 14px;
+  transition: 0.2s;
+}

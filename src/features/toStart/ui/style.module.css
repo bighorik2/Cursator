@@ -1,0 +1,7 @@
+.toStart {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  cursor: pointer;
+  align-items: center;
+}

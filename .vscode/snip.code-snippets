@@ -1,0 +1,42 @@
+{
+  "React Functional Component": {
+    "prefix": "fc",
+    "body": [
+      "import React from \"react\"",
+			"import style from './style.module.css'"
+			"import fonts from 'shared/styles/fonts.module.css'",
+      "",
+      "export const ${1:name} = ($2) => {",
+      "  return (",
+      "    <div className={style.$3}>",
+      "      $4",
+      "    </div>",
+      "  )",
+      "};",
+      "",
+    ],
+    "description": "React Functional Component"
+  },
+
+	"ClassName for CSS-module": {
+    "prefix": "cl",
+    "body": [
+      "className={${1:style.}}"
+    ],
+    "description": "ClassName for CSS-module"
+  },
+	"Add fonts styles": {
+    "prefix": "fonts",
+    "body": [
+      "import fonts from 'shared/styles/fonts.module.css'"
+    ],
+    "description": "Import fonts module"
+  },
+		"Import classnames": {
+    "prefix": "cn",
+    "body": [
+      "import cn from 'classnames'"
+    ],
+    "description": "Import classnames"
+  },
+}

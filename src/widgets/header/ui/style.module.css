@@ -1,0 +1,13 @@
+.header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 24px 55px;
+}
+
+.header>div {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
