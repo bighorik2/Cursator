@@ -124,3 +124,73 @@
   border-radius: 14px 0 0 14px;
   transition: 0.2s;
 }
+
+
+.back{
+  display: none;
+
+  flex-direction: row;
+  width: max-content;
+  width: 100%;
+  flex:1 1 100% !important;
+  gap:7px;
+  justify-content: start;
+  user-select: none;
+  cursor: pointer;
+}
+
+@media(max-width:1024px){
+  .trigger{
+    display: none;
+  }
+  .wrapper{
+    width: 100%;
+  }
+
+  .dropdown{
+    width: 100%;
+
+    visibility: visible;
+    opacity: 1;
+    position:initial;
+  }
+
+  .dropdownWrapper{
+    flex-direction: row;
+    overflow-x: hidden;
+    width: 100%;
+  }
+  .list,
+  .subList{
+    border:0px;
+    width: 100%;
+    min-width: 100%;
+    border-radius: 0px !important;
+    box-shadow: none;
+    position:initial;
+  align-items: start;
+  }
+
+  .subList{
+    flex-wrap: wrap;
+    flex-direction: row;
+    row-gap: 13px;
+    align-content: flex-start;
+    padding:0;
+
+
+  }
+  .subList>a{
+    flex:1 1 30%;
+    text-align: start;;
+  }
+
+ .list:has(>div.selected){
+    margin-left: -100%;
+align-items: start;
+  }
+
+  .back{
+    display: flex;
+  }
+}

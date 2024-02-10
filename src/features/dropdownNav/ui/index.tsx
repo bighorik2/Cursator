@@ -6,6 +6,7 @@ import pointArrow from 'shared/assets/dropdownPointArrow.svg';
 import style from './style.module.css';
 import { useOutsideClick } from 'shared/hooks/useOutsideClick';
 import { useState } from 'react';
+import backArrow from 'shared/assets/backArrow.svg'
 
 const dropdownContent = [
   {
@@ -91,26 +92,33 @@ const dropdownContent = [
 
 
 export const DropdownNav = () => {
-  const [state, setState] = useState({ isOpen: false, selectedPoint: -1, subListIsOpen: false })
-  const ref = useOutsideClick(() => setState({ ...state, subListIsOpen: false, isOpen: false }))
+  const [isOpen,setIsOpen] = useState(false);
+  const [selectedPoint,setSelectedPoint] = useState(-1);
+  const [subListIsOpen,setSubListIsOpen] = useState(true);
+  const ref = useOutsideClick(() => {setSubListIsOpen(false); setIsOpen(false)})
 
   return (
-    <div ref={ref} className={cn(style.wrapper, state.isOpen && style.isOpen)}>
-      <div className={style.trigger} onClick={() => setState({ ...state, subListIsOpen: false, isOpen: !state.isOpen })}>
+    <div ref={ref} className={cn(style.wrapper, isOpen && style.isOpen)}>
+      <div className={style.trigger} onClick={() => {setSubListIsOpen(false); setIsOpen(!isOpen)}}>
         <div className={fonts.textNorm}>Все курсы</div>
         <img src={arrow} />
       </div>
       <div className={style.dropdown}>
+
         <div className={style.dropdownWrapper}>
           <div className={style.list}>
             {dropdownContent.map((e, i) => (
-              <div key={i} className={cn(fonts.dropdownPoint, state.selectedPoint === i && state.subListIsOpen && style.selected)}
-                onClick={() => setState({ ...state, selectedPoint: i, subListIsOpen: state.selectedPoint === i ? !state.subListIsOpen : true })}>{e.category}
+              <div key={i} className={cn(fonts.dropdownPoint, selectedPoint === i && subListIsOpen && style.selected)}
+                onClick={() =>{setSelectedPoint(i);  setSubListIsOpen( selectedPoint === i ? !subListIsOpen : true) }}>{e.category}
                 <img src={pointArrow} /></div>
             ))}
           </div>
-          <div className={cn(style.subList, state.subListIsOpen && style.isOpen)}>
-            {state.selectedPoint !== -1 && dropdownContent[state.selectedPoint].elements.map((el, ind) => (
+          <div className={cn(style.subList, subListIsOpen && style.isOpen)}>
+          <div className={style.back}>
+            <img src={backArrow}/>
+            <span className={fonts.linkTextNorm}>Назад</span>
+             </div>
+            {selectedPoint !== -1 && dropdownContent[selectedPoint].elements.map((el, ind) => (
               <Link key={ind} to={el.id} className={fonts.textSmall}>{el.name}</Link>))}
           </div>
         </div>
