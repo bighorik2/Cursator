@@ -1,15 +1,11 @@
-import React, { useState } from "react";
-
+import { ButtonProps } from "entities/buttons/model/componentModels";
 import arrow from 'shared/assets/dropdownArrow.svg';
 import cn from 'classnames';
 import fonts from 'shared/styles/fonts.module.css';
 import style from './style.module.css';
+import { useState } from "react";
 
-interface BackButtonProps {
-  onClick?: () => void;
-}
-
-export const SubListTrigger = ({ children, onClick }: React.PropsWithChildren<BackButtonProps>) => {
+export const SubListTrigger = ({ children, onClick }: ButtonProps) => {
   const [clicked, setClicked] = useState(false);
 
   return (

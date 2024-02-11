@@ -1,0 +1,13 @@
+.welcome {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 425px;
+  gap: 30px;
+}

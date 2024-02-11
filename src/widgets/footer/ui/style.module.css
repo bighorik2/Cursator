@@ -32,7 +32,7 @@
   flex-direction: row;
   gap: 16px;
   flex-wrap: wrap;
-  
+
 }
 
 
@@ -70,5 +70,15 @@
 @media (max-width:768px) {
   .footer>div:first-child {
     margin-bottom: 49px;
+  }
+}
+
+@media (max-width:480px) {
+  .footer {
+    padding: 48px 20px;
+  }
+
+  .footer>div:first-child {
+    margin-bottom: 20px;
   }
 }

@@ -8,6 +8,17 @@
   letter-spacing: 0px;
 }
 
+.text-large,
+.textLarge {
+  color: rgba(44, 59, 72, 1);
+  font-family: Montserrat;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 142.5%;
+  letter-spacing: 0px;
+  text-align: left;
+}
+
 .text-small,
 .textSmall {
   color: rgba(44, 59, 72, 1);
@@ -73,6 +84,28 @@
   text-align: left;
 }
 
+.link-text-mini,
+.linkTextMini {
+  font-family: Montserrat;
+  color: rgb(0, 117, 255);
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0px;
+  text-align: left;
+}
+
+.sign-text,
+.signText {
+  font-family: Montserrat;
+  color: rgba(44, 59, 72, 1);
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0px;
+  text-align: left;
+}
+
 .header-nav-text,
 .headerNavText {
   color: rgba(44, 59, 72, 1);
@@ -81,6 +114,38 @@
   font-weight: 400;
   line-height: 142.5%;
   letter-spacing: 0px;
+}
+
+.heading {
+  color: rgba(44, 59, 72, 1);
+  font-family: Montserrat;
+  font-size: 60px;
+  font-weight: 700;
+  line-height: 68px;
+  letter-spacing: 0px;
+  text-align: left;
+}
+
+.button-text-norm,
+.buttonTextNorm {
+  color: rgb(255, 255, 255);
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 142.5%;
+  letter-spacing: 0px;
+  text-align: center;
+}
+
+.button-text-med,
+.buttonTextMed {
+  color: rgb(255, 255, 255);
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 142.5%;
+  letter-spacing: 0px;
+  text-align: left;
 }
 
 @media (max-width:1024px) {
@@ -100,9 +165,7 @@
 
   .header-nav-text,
   .headerNavText {
-    color: rgb(44,
-        59,
-        72, );
+    color: rgb(44, 59, 72, );
     font-family: Montserrat;
     font-size: 18px;
     font-weight: 500;
@@ -112,4 +175,35 @@
   }
 
 
+  .text-large,
+  .textLarge {
+    color: rgba(44, 59, 72, 1);
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 142.5%;
+    letter-spacing: 0px;
+    text-align: left;
+  }
+
+  .button-text-norm,
+  .buttonTextNorm {
+    color: rgb(255, 255, 255);
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 142.5%;
+    letter-spacing: 0px;
+    text-align: center;
+  }
+}
+
+@media(max-width:480px) {
+
+  .link-text-mini,
+  .linkTextMini,
+  .sign-text,
+  .signText {
+    font-size: 12px;
+  }
 }

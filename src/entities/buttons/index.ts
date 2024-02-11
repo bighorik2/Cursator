@@ -1,3 +1,4 @@
-export { BackButton } from "./back";
-export { SubListTrigger } from "./subListTrigger";
+export { BackButton } from "./ui/back";
+export { SubListTrigger } from "./ui/subListTrigger";
+export { TakeTestButton } from "./ui/takeTest";
 
