@@ -1,12 +1,12 @@
+import { BackButton, SubListTrigger } from 'entities/buttons';
+
 import { Link } from 'react-router-dom';
-import arrow from 'shared/assets/dropdownArrow.svg';
 import cn from 'classnames';
 import fonts from 'shared/styles/fonts.module.css';
 import pointArrow from 'shared/assets/dropdownPointArrow.svg';
 import style from './style.module.css';
 import { useOutsideClick } from 'shared/hooks/useOutsideClick';
 import { useState } from 'react';
-import backArrow from 'shared/assets/backArrow.svg'
 
 const dropdownContent = [
   {
@@ -92,34 +92,29 @@ const dropdownContent = [
 
 
 export const DropdownNav = () => {
-  const [isOpen,setIsOpen] = useState(false);
-  const [selectedPoint,setSelectedPoint] = useState(-1);
-  const [subListIsOpen,setSubListIsOpen] = useState(true);
-  const ref = useOutsideClick(() => {setSubListIsOpen(false); setIsOpen(false)})
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedPoint, setSelectedPoint] = useState(-1);
+  const [subListIsOpen, setSubListIsOpen] = useState(true);
+  const ref = useOutsideClick(() => { setSubListIsOpen(false); setIsOpen(false) })
 
   return (
     <div ref={ref} className={cn(style.wrapper, isOpen && style.isOpen)}>
-      <div className={style.trigger} onClick={() => {setSubListIsOpen(false); setIsOpen(!isOpen)}}>
-        <div className={fonts.textNorm}>Все курсы</div>
-        <img src={arrow} />
-      </div>
-      <div className={style.dropdown}>
+      <SubListTrigger onClick={() => { setSubListIsOpen(false); setIsOpen(!isOpen) }}>Все курсы</SubListTrigger>
 
+      <div className={style.dropdown}>
         <div className={style.dropdownWrapper}>
           <div className={style.list}>
             {dropdownContent.map((e, i) => (
               <div key={i} className={cn(fonts.dropdownPoint, selectedPoint === i && subListIsOpen && style.selected)}
-                onClick={() =>{setSelectedPoint(i);  setSubListIsOpen( selectedPoint === i ? !subListIsOpen : true) }}>{e.category}
+                onClick={() => { setSelectedPoint(i); setSubListIsOpen(selectedPoint === i ? !subListIsOpen : true) }}>{e.category}
                 <img src={pointArrow} /></div>
             ))}
           </div>
           <div className={cn(style.subList, subListIsOpen && style.isOpen)}>
-          <div className={style.back}>
-            <img src={backArrow}/>
-            <span className={fonts.linkTextNorm}>Назад</span>
-             </div>
+            <BackButton onClick={() => { setSubListIsOpen(false) }}>Назад</BackButton>
+
             {selectedPoint !== -1 && dropdownContent[selectedPoint].elements.map((el, ind) => (
-              <Link key={ind} to={el.id} className={fonts.textSmall}>{el.name}</Link>))}
+              <Link key={ind} to={el.id} className={fonts.dropdownSubPoint}>{el.name}</Link>))}
           </div>
         </div>
       </div>

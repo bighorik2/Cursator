@@ -4,31 +4,6 @@
   will-change: contents;
 }
 
-
-.trigger {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 164px;
-
-  border-radius: 70px;
-  border: 1px solid rgb(0, 117, 255);
-  height: 52px;
-  transition: 0.2s;
-  gap: 8px;
-  user-select: none;
-  cursor: pointer;
-}
-
-.trigger>img {
-  transition: 0.2s;
-  transform: rotate(180deg);
-}
-
-.wrapper.isOpen>.trigger>img {
-  transform: rotate(0deg);
-}
-
 .dropdown {
   position: absolute;
   top: 76px;
@@ -91,10 +66,6 @@
   opacity: 1;
 }
 
-
-
-
-
 .subList {
   display: flex;
   flex-direction: column;
@@ -118,79 +89,87 @@
   left: 0;
 }
 
-.subList.isOpen+.list {}
 
 .list:has(~.subList.isOpen) {
   border-radius: 14px 0 0 14px;
   transition: 0.2s;
 }
 
-
-.back{
-  display: none;
-
-  flex-direction: row;
-  width: max-content;
-  width: 100%;
-  flex:1 1 100% !important;
-  gap:7px;
-  justify-content: start;
-  user-select: none;
-  cursor: pointer;
-}
-
-@media(max-width:1024px){
-  .trigger{
+@media(max-width:1024px) {
+  .wrapper>*:first-child {
     display: none;
   }
-  .wrapper{
+
+  .wrapper {
     width: 100%;
   }
 
-  .dropdown{
+  .dropdown {
     width: 100%;
 
     visibility: visible;
     opacity: 1;
-    position:initial;
+    position: initial;
   }
 
-  .dropdownWrapper{
+  .dropdownWrapper {
     flex-direction: row;
     overflow-x: hidden;
     width: 100%;
   }
+
   .list,
-  .subList{
-    border:0px;
+  .subList {
+    border: 0px;
     width: 100%;
     min-width: 100%;
     border-radius: 0px !important;
     box-shadow: none;
-    position:initial;
-  align-items: start;
+    position: initial;
+    align-items: start;
   }
 
-  .subList{
+  .subList {
     flex-wrap: wrap;
     flex-direction: row;
     row-gap: 13px;
+    column-gap: 52px;
+    justify-content: space-between;
     align-content: flex-start;
-    padding:0;
+    padding: 0;
 
 
   }
-  .subList>a{
-    flex:1 1 30%;
-    text-align: start;;
+
+  .subList>a {
+    flex: 1 1 25%;
+    text-align: start;
+    align-items: start;
+    min-width: max-content;
   }
 
- .list:has(>div.selected){
+  .list:has(>div.selected) {
     margin-left: -100%;
-align-items: start;
+    align-items: start;
   }
 
-  .back{
+  .subList>*:first-child {
     display: flex;
+  }
+}
+
+@media (max-width:480px) {
+  .subList {
+    flex-direction: column;
+    row-gap: 13px;
+    padding: 0;
+  }
+
+  .list {
+    padding: 0;
+  }
+
+  .subList>a {
+    flex: initial
   }
 }

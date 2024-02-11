@@ -43,7 +43,7 @@
 
 .dropdown-point,
 .dropdownPoint {
-  color: rgba(44, 59, 72, 0.46);
+  color: rgba(44, 59, 72, 0.6);
   font-family: Montserrat;
   font-size: 18px;
   font-weight: 500;
@@ -52,13 +52,64 @@
   text-align: left;
 }
 
+.dropdown-sub-point,
+.dropdownSubPoint {
+  color: rgba(44, 59, 72, 1);
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 142.5%;
+  letter-spacing: 0px;
+}
+
 .link-text-norm,
-.linkTextNorm{
+.linkTextNorm {
   color: rgb(0, 117, 255);
-font-family: Montserrat;
-font-size: 18px;
-font-weight: 500;
-line-height: 142.5%;
-letter-spacing: 0px;
-text-align: left;
+  font-family: Montserrat;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 142.5%;
+  letter-spacing: 0px;
+  text-align: left;
+}
+
+.header-nav-text,
+.headerNavText {
+  color: rgba(44, 59, 72, 1);
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 142.5%;
+  letter-spacing: 0px;
+}
+
+@media (max-width:1024px) {
+
+  .dropdown-point,
+  .dropdownPoint,
+  .dropdown-sub-point,
+  .dropdownSubPoint {
+    color: rgba(44, 59, 72, 0.6);
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 142.5%;
+    letter-spacing: 0px;
+    text-align: left;
+  }
+
+  .header-nav-text,
+  .headerNavText {
+    color: rgb(44,
+        59,
+        72, );
+    font-family: Montserrat;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 142.5%;
+    letter-spacing: 0px;
+    text-align: left;
+  }
+
+
 }

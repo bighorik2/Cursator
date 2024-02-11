@@ -1,0 +1,13 @@
+.back {
+  display: none;
+
+  flex-direction: row;
+  width: max-content;
+  width: 100%;
+  flex: 1 1 100% !important;
+  gap: 7px;
+  justify-content: start;
+  user-select: none;
+  cursor: pointer;
+  max-height: 26px;
+}

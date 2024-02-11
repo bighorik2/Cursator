@@ -1,0 +1,23 @@
+.trigger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 164px;
+
+  border-radius: 70px;
+  border: 1px solid rgb(0, 117, 255);
+  height: 52px;
+  transition: 0.2s;
+  gap: 8px;
+  user-select: none;
+  cursor: pointer;
+}
+
+.trigger>img {
+  transition: 0.2s;
+  transform: rotate(180deg);
+}
+
+.trigger.clicked>img {
+  transform: rotate(0deg);
+}
