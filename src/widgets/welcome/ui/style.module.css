@@ -1,9 +1,11 @@
 .welcome {
-  position: relative;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  position:relative;
   align-items: start;
   padding: 55px;
+  overflow: hidden;
 }
 
 .wrapper {
@@ -14,6 +16,51 @@
 }
 
 .img {
-  position: relative;
-  right: 0;
+position:relative;
+right: 25px;
+top:-100px;
+width: 865px;
+height: 645px;
+  pointer-events: none;
+}
+
+
+@media (max-width:1024px){
+  .welcome{
+    padding:40px;
+  }
+  .wrapper{
+    min-width: 345px;
+    gap:23px;
+
+  }
+  .img{
+    width: 507px;
+    height: 378px;
+    top:-30px;
+    right: -35px;
+  }
+}
+
+@media(max-width:480px) {
+  .welcome{
+    padding:20px;
+    flex-direction: column;
+  }
+  .wrapper{
+
+    width: 100%;
+    min-width: initial;
+  }
+.img{
+  min-width: 480px;
+  top:initial;
+  right: 0px;
+}
+}
+
+@media(max-width:440px){
+.img{
+  right: 40px;
+}
 }

@@ -8,14 +8,16 @@
   position: absolute;
   top: 76px;
   left: 0;
-
+z-index: 0;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.3s, visibility 0s linear 0.3s;
+  transition: opacity 0.3s, visibility 0s linear 0.3s, z-index 0s linear 0.3s;
 }
 
 .wrapper.isOpen>.dropdown {
+  z-index: 1;
   transition-delay: 0s;
+
   opacity: 1;
   visibility: visible;
 

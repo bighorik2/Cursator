@@ -39,4 +39,15 @@
     ],
     "description": "Import classnames"
   },
+  ,
+		"Use css media": {
+      "scope":"css",
+    "prefix": "med",
+    "body": [
+      "@media(max-width:${1:1024px}){",
+      "$2",
+    "}"
+    ],
+    "description": "@media(max-width:1024px){}"
+  },
 }

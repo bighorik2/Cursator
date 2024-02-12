@@ -36,7 +36,7 @@
   }
 
   .nav.isOpen {
-    z-index: 1;
+    z-index: 3;
     opacity: 1;
     top: 100%;
   }
