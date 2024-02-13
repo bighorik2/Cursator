@@ -39,7 +39,7 @@
     ],
     "description": "Import classnames"
   },
-  ,
+  
 		"Use css media": {
       "scope":"css",
     "prefix": "med",

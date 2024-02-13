@@ -1,0 +1,2 @@
+export { SchoolListReviews } from './ui';
+
